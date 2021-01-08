@@ -29,4 +29,10 @@ func main() {
 	}
 	defer window.Destroy()
 
+	renderer, err := sdl.CreateRenderer(window, -1, sdl.RENDERER_ACCELERATED)
+	if err != nil {
+		fmt.Println("initializing renderer:", err)
+	}
+	defer renderer.Destroy()
+
 }
